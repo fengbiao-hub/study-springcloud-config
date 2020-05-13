@@ -1,11 +1,9 @@
 spring:
   profiles:
-    active:
-    - dev
+    active: dev
 ---
 spring:
-  profiles:
-  - dev
+  profiles: dev
 server:
   port: 8761
 eureka:
@@ -20,8 +18,7 @@ eureka:
     enable-self-preservation: false
 ---
 spring:
-  profiles:
-  - prod
+  profiles: prod
 server:
   port: 8761
 eureka:
