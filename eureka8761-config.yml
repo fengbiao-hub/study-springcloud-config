@@ -1,8 +1,36 @@
-spring:  profiles:    active:    - dev---spring:  profiles:  - dev
+spring:
+  profiles:
+    active:
+    - dev
+---
+spring:
+  profiles:
+  - dev
 server:
   port: 8761
-eureka:  instance:    hostname: eureka8761.com
+eureka:
+  instance:
+    hostname: eureka8761.com
   client:
-    register-with-eureka: false    fetch-registry: false
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
-      defaultZone: http://eureka8762.com:8762/eureka/  server:    enable-self-preservation: false---spring:  profiles:  - devserver:  port: 8761eureka:  instance:    hostname: eureka8761.com  client:    register-with-eureka: false    fetch-registry: false    service-url:      defaultZone: http://eureka8762.com:8762/eureka/  server:    enable-self-preservation: true
+      defaultZone: http://eureka8762.com:8762/eureka/
+  server:
+    enable-self-preservation: false
+---
+spring:
+  profiles:
+  - dev
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka8761.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8762.com:8762/eureka/
+  server:
+    enable-self-preservation: true
