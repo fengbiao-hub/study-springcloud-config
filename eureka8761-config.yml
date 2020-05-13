@@ -1,6 +1,8 @@
 spring:
   profiles:
     active: dev
+emp:
+  name: tom
 ---
 spring:
   profiles: dev
