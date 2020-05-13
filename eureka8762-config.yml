@@ -1,0 +1,9 @@
+spring:  profiles:    active:    - dev---spring:  profiles:  - dev
+server:
+  port: 8762
+eureka:  instance:    hostname: eureka8762.com #集群hostname不可重复
+  client:
+    register-with-eureka: false    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8761.com:8761/eureka/ #集群版eureka
+  server:    enable-self-preservation: false---spring:  profiles:  - prodserver:  port: 8762eureka:  instance:    hostname: eureka8762.com #集群hostname不可重复  client:    register-with-eureka: false    fetch-registry: false    service-url:      defaultZone: http://eureka8761.com:8761/eureka/ #集群版eureka  server:    enable-self-preservation: true
