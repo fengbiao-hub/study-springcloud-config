@@ -2,9 +2,34 @@ spring:
   profiles:
     active: dev
 ---
-spring:  profiles: dev
-server:  port: 9001
+spring:
+  profiles: dev
+  rabbitmq: #配置mq
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - bus-refresh #暴露触发消息总线的地址
+server:
+  port: 9001
 ---
-spring:  profiles: prod
+spring:
+  profiles: prod
+  rabbitmq: #配置mq
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - bus-refresh #暴露触发消息总线的地址
 server:
   port: 9001
