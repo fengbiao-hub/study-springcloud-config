@@ -7,7 +7,7 @@ emp:
 spring:
   profiles: dev
 server:
-  port: 8761
+  port: 8762
 eureka:
   instance:
     hostname: eureka8761.com
